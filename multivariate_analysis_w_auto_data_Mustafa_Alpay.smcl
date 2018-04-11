@@ -1,0 +1,219 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/mustafa_alpay/Desktop/multivariate_analysis_w_auto_data_Mustafa_Alpay.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}11 Apr 2018, 21:10:58
+
+{com}. use http://www.stata-press.com/data/r12/auto.dta, clear
+{txt}(1978 Automobile Data)
+
+{com}. list
+{txt}
+     {c TLC}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c TRC}
+     {c |} {res}make                 price   mpg   rep78   headroom   trunk   weight   length   turn   displa~t   gear_r~o    foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+  1. {c |} {res}AMC Concord          4,099    22       3        2.5      11    2,930      186     40        121       3.58   Domestic {txt}{c |}
+  2. {c |} {res}AMC Pacer            4,749    17       3        3.0      11    3,350      173     40        258       2.53   Domestic {txt}{c |}
+  3. {c |} {res}AMC Spirit           3,799    22       .        3.0      12    2,640      168     35        121       3.08   Domestic {txt}{c |}
+  4. {c |} {res}Buick Century        4,816    20       3        4.5      16    3,250      196     40        196       2.93   Domestic {txt}{c |}
+  5. {c |} {res}Buick Electra        7,827    15       4        4.0      20    4,080      222     43        350       2.41   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+  6. {c |} {res}Buick LeSabre        5,788    18       3        4.0      21    3,670      218     43        231       2.73   Domestic {txt}{c |}
+  7. {c |} {res}Buick Opel           4,453    26       .        3.0      10    2,230      170     34        304       2.87   Domestic {txt}{c |}
+  8. {c |} {res}Buick Regal          5,189    20       3        2.0      16    3,280      200     42        196       2.93   Domestic {txt}{c |}
+  9. {c |} {res}Buick Riviera       10,372    16       3        3.5      17    3,880      207     43        231       2.93   Domestic {txt}{c |}
+ 10. {c |} {res}Buick Skylark        4,082    19       3        3.5      13    3,400      200     42        231       3.08   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 11. {c |} {res}Cad. Deville        11,385    14       3        4.0      20    4,330      221     44        425       2.28   Domestic {txt}{c |}
+ 12. {c |} {res}Cad. Eldorado       14,500    14       2        3.5      16    3,900      204     43        350       2.19   Domestic {txt}{c |}
+ 13. {c |} {res}Cad. Seville        15,906    21       3        3.0      13    4,290      204     45        350       2.24   Domestic {txt}{c |}
+ 14. {c |} {res}Chev. Chevette       3,299    29       3        2.5       9    2,110      163     34        231       2.93   Domestic {txt}{c |}
+ 15. {c |} {res}Chev. Impala         5,705    16       4        4.0      20    3,690      212     43        250       2.56   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 16. {c |} {res}Chev. Malibu         4,504    22       3        3.5      17    3,180      193     31        200       2.73   Domestic {txt}{c |}
+ 17. {c |} {res}Chev. Monte Carlo    5,104    22       2        2.0      16    3,220      200     41        200       2.73   Domestic {txt}{c |}
+ 18. {c |} {res}Chev. Monza          3,667    24       2        2.0       7    2,750      179     40        151       2.73   Domestic {txt}{c |}
+ 19. {c |} {res}Chev. Nova           3,955    19       3        3.5      13    3,430      197     43        250       2.56   Domestic {txt}{c |}
+ 20. {c |} {res}Dodge Colt           3,984    30       5        2.0       8    2,120      163     35         98       3.54   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 21. {c |} {res}Dodge Diplomat       4,010    18       2        4.0      17    3,600      206     46        318       2.47   Domestic {txt}{c |}
+ 22. {c |} {res}Dodge Magnum         5,886    16       2        4.0      17    3,600      206     46        318       2.47   Domestic {txt}{c |}
+ 23. {c |} {res}Dodge St. Regis      6,342    17       2        4.5      21    3,740      220     46        225       2.94   Domestic {txt}{c |}
+ 24. {c |} {res}Ford Fiesta          4,389    28       4        1.5       9    1,800      147     33         98       3.15   Domestic {txt}{c |}
+ 25. {c |} {res}Ford Mustang         4,187    21       3        2.0      10    2,650      179     43        140       3.08   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 26. {c |} {res}Linc. Continental   11,497    12       3        3.5      22    4,840      233     51        400       2.47   Domestic {txt}{c |}
+ 27. {c |} {res}Linc. Mark V        13,594    12       3        2.5      18    4,720      230     48        400       2.47   Domestic {txt}{c |}
+ 28. {c |} {res}Linc. Versailles    13,466    14       3        3.5      15    3,830      201     41        302       2.47   Domestic {txt}{c |}
+ 29. {c |} {res}Merc. Bobcat         3,829    22       4        3.0       9    2,580      169     39        140       2.73   Domestic {txt}{c |}
+ 30. {c |} {res}Merc. Cougar         5,379    14       4        3.5      16    4,060      221     48        302       2.75   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 31. {c |} {res}Merc. Marquis        6,165    15       3        3.5      23    3,720      212     44        302       2.26   Domestic {txt}{c |}
+ 32. {c |} {res}Merc. Monarch        4,516    18       3        3.0      15    3,370      198     41        250       2.43   Domestic {txt}{c |}
+ 33. {c |} {res}Merc. XR-7           6,303    14       4        3.0      16    4,130      217     45        302       2.75   Domestic {txt}{c |}
+ 34. {c |} {res}Merc. Zephyr         3,291    20       3        3.5      17    2,830      195     43        140       3.08   Domestic {txt}{c |}
+ 35. {c |} {res}Olds 98              8,814    21       4        4.0      20    4,060      220     43        350       2.41   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 36. {c |} {res}Olds Cutl Supr       5,172    19       3        2.0      16    3,310      198     42        231       2.93   Domestic {txt}{c |}
+ 37. {c |} {res}Olds Cutlass         4,733    19       3        4.5      16    3,300      198     42        231       2.93   Domestic {txt}{c |}
+ 38. {c |} {res}Olds Delta 88        4,890    18       4        4.0      20    3,690      218     42        231       2.73   Domestic {txt}{c |}
+ 39. {c |} {res}Olds Omega           4,181    19       3        4.5      14    3,370      200     43        231       3.08   Domestic {txt}{c |}
+ 40. {c |} {res}Olds Starfire        4,195    24       1        2.0      10    2,730      180     40        151       2.73   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 41. {c |} {res}Olds Toronado       10,371    16       3        3.5      17    4,030      206     43        350       2.41   Domestic {txt}{c |}
+ 42. {c |} {res}Plym. Arrow          4,647    28       3        2.0      11    3,260      170     37        156       3.05   Domestic {txt}{c |}
+ 43. {c |} {res}Plym. Champ          4,425    34       5        2.5      11    1,800      157     37         86       2.97   Domestic {txt}{c |}
+ 44. {c |} {res}Plym. Horizon        4,482    25       3        4.0      17    2,200      165     36        105       3.37   Domestic {txt}{c |}
+ 45. {c |} {res}Plym. Sapporo        6,486    26       .        1.5       8    2,520      182     38        119       3.54   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 46. {c |} {res}Plym. Volare         4,060    18       2        5.0      16    3,330      201     44        225       3.23   Domestic {txt}{c |}
+ 47. {c |} {res}Pont. Catalina       5,798    18       4        4.0      20    3,700      214     42        231       2.73   Domestic {txt}{c |}
+ 48. {c |} {res}Pont. Firebird       4,934    18       1        1.5       7    3,470      198     42        231       3.08   Domestic {txt}{c |}
+ 49. {c |} {res}Pont. Grand Prix     5,222    19       3        2.0      16    3,210      201     45        231       2.93   Domestic {txt}{c |}
+ 50. {c |} {res}Pont. Le Mans        4,723    19       3        3.5      17    3,200      199     40        231       2.93   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 51. {c |} {res}Pont. Phoenix        4,424    19       .        3.5      13    3,420      203     43        231       3.08   Domestic {txt}{c |}
+ 52. {c |} {res}Pont. Sunbird        4,172    24       2        2.0       7    2,690      179     41        151       2.73   Domestic {txt}{c |}
+ 53. {c |} {res}Audi 5000            9,690    17       5        3.0      15    2,830      189     37        131       3.20    Foreign {txt}{c |}
+ 54. {c |} {res}Audi Fox             6,295    23       3        2.5      11    2,070      174     36         97       3.70    Foreign {txt}{c |}
+ 55. {c |} {res}BMW 320i             9,735    25       4        2.5      12    2,650      177     34        121       3.64    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 56. {c |} {res}Datsun 200           6,229    23       4        1.5       6    2,370      170     35        119       3.89    Foreign {txt}{c |}
+ 57. {c |} {res}Datsun 210           4,589    35       5        2.0       8    2,020      165     32         85       3.70    Foreign {txt}{c |}
+ 58. {c |} {res}Datsun 510           5,079    24       4        2.5       8    2,280      170     34        119       3.54    Foreign {txt}{c |}
+ 59. {c |} {res}Datsun 810           8,129    21       4        2.5       8    2,750      184     38        146       3.55    Foreign {txt}{c |}
+ 60. {c |} {res}Fiat Strada          4,296    21       3        2.5      16    2,130      161     36        105       3.37    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 61. {c |} {res}Honda Accord         5,799    25       5        3.0      10    2,240      172     36        107       3.05    Foreign {txt}{c |}
+ 62. {c |} {res}Honda Civic          4,499    28       4        2.5       5    1,760      149     34         91       3.30    Foreign {txt}{c |}
+ 63. {c |} {res}Mazda GLC            3,995    30       4        3.5      11    1,980      154     33         86       3.73    Foreign {txt}{c |}
+ 64. {c |} {res}Peugeot 604         12,990    14       .        3.5      14    3,420      192     38        163       3.58    Foreign {txt}{c |}
+ 65. {c |} {res}Renault Le Car       3,895    26       3        3.0      10    1,830      142     34         79       3.72    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 66. {c |} {res}Subaru               3,798    35       5        2.5      11    2,050      164     36         97       3.81    Foreign {txt}{c |}
+ 67. {c |} {res}Toyota Celica        5,899    18       5        2.5      14    2,410      174     36        134       3.06    Foreign {txt}{c |}
+ 68. {c |} {res}Toyota Corolla       3,748    31       5        3.0       9    2,200      165     35         97       3.21    Foreign {txt}{c |}
+ 69. {c |} {res}Toyota Corona        5,719    18       5        2.0      11    2,670      175     36        134       3.05    Foreign {txt}{c |}
+ 70. {c |} {res}VW Dasher            7,140    23       4        2.5      12    2,160      172     36         97       3.74    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+ 71. {c |} {res}VW Diesel            5,397    41       5        3.0      15    2,040      155     35         90       3.78    Foreign {txt}{c |}
+ 72. {c |} {res}VW Rabbit            4,697    25       4        3.0      15    1,930      155     35         89       3.78    Foreign {txt}{c |}
+ 73. {c |} {res}VW Scirocco          6,850    25       4        2.0      16    1,990      156     36         97       3.78    Foreign {txt}{c |}
+ 74. {c |} {res}Volvo 260           11,995    17       5        2.5      14    3,170      193     37        163       2.98    Foreign {txt}{c |}
+     {c BLC}{hline 19}{c -}{hline 8}{c -}{hline 5}{c -}{hline 7}{c -}{hline 10}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 6}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c BRC}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. summarize
+
+{txt}    Variable {c |}       Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 56}
+{space 8}make {c |}{res}         0
+{txt}{space 7}price {c |}{res}        74    6165.257    2949.496       3291      15906
+{txt}{space 9}mpg {c |}{res}        74     21.2973    5.785503         12         41
+{txt}{space 7}rep78 {c |}{res}        69    3.405797    .9899323          1          5
+{txt}{space 4}headroom {c |}{res}        74    2.993243    .8459948        1.5          5
+{txt}{hline 13}{c +}{hline 56}
+{space 7}trunk {c |}{res}        74    13.75676    4.277404          5         23
+{txt}{space 6}weight {c |}{res}        74    3019.459    777.1936       1760       4840
+{txt}{space 6}length {c |}{res}        74    187.9324    22.26634        142        233
+{txt}{space 8}turn {c |}{res}        74    39.64865    4.399354         31         51
+{txt}displacement {c |}{res}        74    197.2973    91.83722         79        425
+{txt}{hline 13}{c +}{hline 56}
+{space 2}gear_ratio {c |}{res}        74    3.014865    .4562871       2.19       3.89
+{txt}{space 5}foreign {c |}{res}        74    .2972973    .4601885          0          1
+
+{com}. describe
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r12/auto.dta
+{txt}  obs:{res}            74                          1978 Automobile Data
+{txt} vars:{res}            12                          13 Apr 2011 17:45
+{txt} size:{res}         3,182                          (_dta has notes)
+{txt}{hline}
+              storage  display     value
+variable name   type   format      label      variable label
+{hline}
+{p 0 48}{res}{bind:make           }{txt}{bind: str18  }{bind:{txt}%-18s      }{space 1}{bind:         }{bind:  }{res}{res}Make and Model{p_end}
+{p 0 48}{bind:price          }{txt}{bind: int    }{bind:{txt}%8.0gc     }{space 1}{bind:         }{bind:  }{res}{res}Price{p_end}
+{p 0 48}{bind:mpg            }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Mileage (mpg){p_end}
+{p 0 48}{bind:rep78          }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Repair Record 1978{p_end}
+{p 0 48}{bind:headroom       }{txt}{bind: float  }{bind:{txt}%6.1f      }{space 1}{bind:         }{bind:  }{res}{res}Headroom (in.){p_end}
+{p 0 48}{bind:trunk          }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Trunk space (cu. ft.){p_end}
+{p 0 48}{bind:weight         }{txt}{bind: int    }{bind:{txt}%8.0gc     }{space 1}{bind:         }{bind:  }{res}{res}Weight (lbs.){p_end}
+{p 0 48}{bind:length         }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Length (in.){p_end}
+{p 0 48}{bind:turn           }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Turn Circle (ft.) {p_end}
+{p 0 48}{bind:displacement   }{txt}{bind: int    }{bind:{txt}%8.0g      }{space 1}{bind:         }{bind:  }{res}{res}Displacement (cu. in.){p_end}
+{p 0 48}{bind:gear_ratio     }{txt}{bind: float  }{bind:{txt}%6.2f      }{space 1}{bind:         }{bind:  }{res}{res}Gear Ratio{p_end}
+{p 0 48}{bind:foreign        }{txt}{bind: byte   }{bind:{txt}%8.0g      }{space 1}{bind:origin   }{bind:  }{res}{res}Car type{p_end}
+{txt}{hline}
+Sorted by:  {res}foreign
+
+{com}. mvreg price = c.weight c.mpg
+{res}
+{txt}Equation          Obs  Parms        RMSE    "R-sq"          F        P
+{hline 70}
+{res}price              74      3    2514.029    0.2934   14.73982   0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       price{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2} 1.746559{col 26}{space 2} .6413538{col 37}{space 1}    2.72{col 46}{space 3}0.008{col 54}{space 4}  .467736{col 67}{space 3} 3.025382
+{txt}{space 9}mpg {c |}{col 14}{res}{space 2}-49.51222{col 26}{space 2} 86.15604{col 37}{space 1}   -0.57{col 46}{space 3}0.567{col 54}{space 4}-221.3025{col 67}{space 3}  122.278
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1946.069{col 26}{space 2}  3597.05{col 37}{space 1}    0.54{col 46}{space 3}0.590{col 54}{space 4}-5226.245{col 67}{space 3} 9118.382
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. mvreg price = c.weight c.mpg if foreign==0
+{res}
+{txt}Equation          Obs  Parms        RMSE    "R-sq"          F        P
+{hline 70}
+{res}price              52      3    2271.986    0.4830   22.88496   0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       price{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2} 4.415037{col 26}{space 2} .9483912{col 37}{space 1}    4.66{col 46}{space 3}0.000{col 54}{space 4} 2.509173{col 67}{space 3}   6.3209
+{txt}{space 9}mpg {c |}{col 14}{res}{space 2}  237.691{col 26}{space 2} 139.0334{col 37}{space 1}    1.71{col 46}{space 3}0.094{col 54}{space 4}-41.70716{col 67}{space 3} 517.0891
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-13285.44{col 26}{space 2} 5726.031{col 37}{space 1}   -2.32{col 46}{space 3}0.025{col 54}{space 4}-24792.33{col 67}{space 3}-1778.553
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. mvreg price = c.weight c.mpg if foreign==1
+{res}
+{txt}Equation          Obs  Parms        RMSE    "R-sq"          F        P
+{hline 70}
+{res}price              22      3    1276.663    0.7855   34.78676   0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       price{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2} 5.155842{col 26}{space 2} .8806888{col 37}{space 1}    5.85{col 46}{space 3}0.000{col 54}{space 4} 3.312539{col 67}{space 3} 6.999145
+{txt}{space 9}mpg {c |}{col 14}{res}{space 2}-19.77737{col 26}{space 2} 57.68122{col 37}{space 1}   -0.34{col 46}{space 3}0.735{col 54}{space 4}-140.5055{col 67}{space 3} 100.9508
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5065.841{col 26}{space 2} 3202.514{col 37}{space 1}   -1.58{col 46}{space 3}0.130{col 54}{space 4}-11768.78{col 67}{space 3} 1637.098
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. mvreg price = c.weight c.mpg
+{res}
+{txt}Equation          Obs  Parms        RMSE    "R-sq"          F        P
+{hline 70}
+{res}price              74      3    2514.029    0.2934   14.73982   0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       price{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}weight {c |}{col 14}{res}{space 2} 1.746559{col 26}{space 2} .6413538{col 37}{space 1}    2.72{col 46}{space 3}0.008{col 54}{space 4}  .467736{col 67}{space 3} 3.025382
+{txt}{space 9}mpg {c |}{col 14}{res}{space 2}-49.51222{col 26}{space 2} 86.15604{col 37}{space 1}   -0.57{col 46}{space 3}0.567{col 54}{space 4}-221.3025{col 67}{space 3}  122.278
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1946.069{col 26}{space 2}  3597.05{col 37}{space 1}    0.54{col 46}{space 3}0.590{col 54}{space 4}-5226.245{col 67}{space 3} 9118.382
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. exit
